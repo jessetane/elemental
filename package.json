@@ -1,0 +1,11 @@
+{
+  "name": "elemental",
+  "version": "1.0.0",
+  "description": "Aliases for cumbersome DOM APIs",
+  "dependencies": {
+    "custom-event-polyfill": "^0.2.2"
+  },
+  "repository": "https://github.com/jessetane/elemental",
+  "author": "jesse.tane@gmail.com",
+  "license": "Public Domain"
+}
