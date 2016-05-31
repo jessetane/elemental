@@ -1,5 +1,5 @@
 {
-  "name": "elemental",
+  "name": "elementary",
   "version": "1.0.0",
   "description": "Aliases for cumbersome DOM APIs",
   "dependencies": {

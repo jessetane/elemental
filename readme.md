@@ -1,4 +1,4 @@
-# elemental
+# elementary
 Aliases for cumbersome DOM APIs.
 
 ## Why
