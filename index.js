@@ -10,12 +10,22 @@ Element.prototype.qsa = function (sel) {
 
 Element.prototype.on = Element.prototype.addEventListener
 
-Element.prototype.off = Element.prototype.removeEventListener
+Element.prototype.off = function (name, cb) {
+  var args = Array.from(arguments)
+  if (cb._once) {
+    args[1] = cb._once
+    delete cb._once
+  }
+  return Element.prototype.removeEventListener.apply(this, args)
+}
 
 Element.prototype.once = function (name, cb) {
-  this.on(name, once)
+  var self = this
+  var args = Array.from(arguments)
+  args[1] = cb._once = once
+  return this.on.apply(this, args)
   function once (evt) {
-    this.off(name, once)
+    Element.prototype.removeEventListener.apply(self, args)
     cb(evt)
   }
 }
