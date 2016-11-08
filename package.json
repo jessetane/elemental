@@ -1,6 +1,6 @@
 {
   "name": "elementary",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Aliases for cumbersome DOM APIs",
   "dependencies": {
     "custom-event-polyfill": "^0.2.2"
