@@ -11,7 +11,7 @@ Element.prototype.qsa = function (sel) {
 Element.prototype.on = Element.prototype.addEventListener
 
 Element.prototype.off = function (name, cb) {
-  var args = Array.from(arguments)
+  var args = Array.prototype.slice.call(arguments)
   if (cb._once) {
     args[1] = cb._once
     delete cb._once
@@ -21,7 +21,7 @@ Element.prototype.off = function (name, cb) {
 
 Element.prototype.once = function (name, cb) {
   var self = this
-  var args = Array.from(arguments)
+  var args = Array.prototype.slice.call(arguments)
   args[1] = cb._once = once
   return this.on.apply(this, args)
   function once (evt) {
