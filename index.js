@@ -31,7 +31,6 @@ Element.prototype.once = function (name, cb) {
 }
 
 Element.prototype.emit = function (name, params) {
-  params = { detail: params }
   var event = new CustomEvent(name, params)
   this.dispatchEvent(event)
   event = new CustomEvent('*', params)
